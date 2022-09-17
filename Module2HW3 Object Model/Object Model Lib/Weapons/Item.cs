@@ -10,7 +10,6 @@ namespace Object_Model_Lib.Weapons
     {
         public void DeleteItem()
         {
-
         }
     }
 }
