@@ -52,7 +52,7 @@ namespace Module2HW3_Object_Model
         {
             Console.WriteLine();
             Console.WriteLine("Индекс оружия для спавна");
-            Console.WriteLine("1 - Sword, 2 - Shield, 3 - Bow, 4 - Crossbow, 5 - Rifle, 6 - AutoRifle");
+            Console.WriteLine("1 - Shield, 2 - Sword, 3 - Bow, 4 - Crossbow, 5 - Rifle, 6 - AutoRifle");
             switch (Console.ReadKey().Key)
             {
                 case ConsoleKey.D1:

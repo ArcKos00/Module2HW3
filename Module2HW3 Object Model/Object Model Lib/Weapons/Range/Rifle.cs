@@ -15,7 +15,7 @@ namespace Object_Model_Lib
     {
         protected int holder = 5;
         protected int _currentHolder;
-        public Rifle(float range, float accuracy, TypeAmmo typeAmmo, TypeWeapon type, int cost, int damage, string name)
+        public Rifle(TypeWeapon type, TypeAmmo typeAmmo, int damage, int cost, float range, float accuracy, string name)
             : base(range, accuracy, typeAmmo, type, name, damage, cost)
         {
             _currentHolder = holder;
@@ -30,6 +30,7 @@ namespace Object_Model_Lib
                 base.ActionDamage();
                 Console.WriteLine("Нанесено урона: {0}", Damage);
                 base.Reload(40);
+
                 _currentHolder--;
                 if (_currentHolder == 0)
                 {
@@ -38,6 +39,8 @@ namespace Object_Model_Lib
                     break;
                 }
             }
+
+            Console.WriteLine("______________________________");
         }
 
         public override void Reload(int delay)

@@ -13,12 +13,10 @@ namespace Object_Model_Lib
     /// </summary>
     public class Shield : Weapon
     {
-        protected int _extraArmor;
         private float _chanceBashEnemy;
-        public Shield(TypeWeapon type, int damage, int cost, float chanceBash, string name, int extraArm, float range)
+        public Shield(TypeWeapon type, int damage, int cost, float chanceBash, float range, string name)
             : base(type, name, damage, cost, range)
         {
-            _extraArmor = extraArm;
             _chanceBashEnemy = chanceBash;
             _weaponType = AllWeaponTypes.Shield;
         }
@@ -32,6 +30,8 @@ namespace Object_Model_Lib
             {
                 Console.WriteLine("Враг оглушен...");
             }
+
+            Console.WriteLine("______________________________");
         }
     }
 }

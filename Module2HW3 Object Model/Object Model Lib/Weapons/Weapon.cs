@@ -73,6 +73,8 @@ namespace Object_Model_Lib
                 Console.Write(".");
                 Thread.Sleep(100);
             }
+
+            Console.WriteLine();
         }
     }
 }

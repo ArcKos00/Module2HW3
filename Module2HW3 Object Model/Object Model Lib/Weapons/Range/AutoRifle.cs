@@ -8,8 +8,8 @@ namespace Object_Model_Lib
 {
     public class AutoRifle : Rifle
     {
-        public AutoRifle(float range, float accuracy, TypeAmmo typeAmmo, TypeWeapon type, int cost, int damage, string name)
-            : base(range, accuracy, typeAmmo, type, cost, damage, name)
+        public AutoRifle(TypeWeapon type, TypeAmmo typeAmmo, int damage, int cost, float range, float accuracy, string name)
+            : base(type, typeAmmo, damage, cost, range, accuracy, name)
         {
             holder = 7;
             _currentHolder = holder;

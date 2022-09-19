@@ -15,7 +15,7 @@ namespace Object_Model_Lib
     {
         public float _critChance = 0.1f;
         public float _crit;
-        public Sword(TypeWeapon type, int damage, int cost, float crit, string name, float range)
+        public Sword(TypeWeapon type, int damage, int cost, float crit, float range, string name)
             : base(type, name, damage, cost, range)
         {
             _crit = crit;
@@ -35,6 +35,7 @@ namespace Object_Model_Lib
             {
                 Console.WriteLine("Нанесено урона: {0}", Damage);
             }
+            Console.WriteLine("______________________________");
         }
     }
 }

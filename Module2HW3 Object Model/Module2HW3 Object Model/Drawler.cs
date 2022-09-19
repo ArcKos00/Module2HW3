@@ -16,11 +16,24 @@ namespace Module2HW3_Object_Model
             {
                 if (inv.Bag[i] != null)
                 {
-                    Console.WriteLine("Индекс: " + i);
-                    Console.WriteLine("Название: " + inv.Bag[i].Name);
-                    Console.WriteLine("Тип оружия: " + inv.Bag[i]._weaponType);
-                    Console.WriteLine("Цена: " + inv.Bag[i].Cost);
-                    Console.WriteLine();
+                    Console.WriteLine("Ячейка: " + i);
+                    if (inv.Bag[i]._weaponType == AllWeaponTypes.Bow
+                     || inv.Bag[i]._weaponType == AllWeaponTypes.Shield
+                     || inv.Bag[i]._weaponType == AllWeaponTypes.Sword)
+                    {
+                        Console.Write("Название: " + inv.Bag[i].Name + "\t\t");
+                    }
+                    else
+                    {
+                        Console.Write("Название: " + inv.Bag[i].Name + "\t");
+                    }
+
+                    Console.WriteLine("Вид оружия: " + inv.Bag[i]._weaponType);
+                    Console.Write("Цена: " + inv.Bag[i].Cost + "\t\t");
+                    Console.WriteLine("Тип оружия: " + inv.Bag[i].WType);
+                    Console.Write("Точность: " + inv.Bag[i].Accuracy + "\t\t");
+                    Console.WriteLine("Дальность поражения: " + inv.Bag[i].Range);
+                    Console.WriteLine("-----------------------------------------------");
                 }
             }
         }

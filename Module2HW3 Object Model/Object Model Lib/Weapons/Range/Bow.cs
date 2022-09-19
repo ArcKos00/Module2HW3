@@ -14,7 +14,7 @@ namespace Object_Model_Lib
     /// </summary>
     public class Bow : ShootingWeapon
     {
-        public Bow(float range, float accuracy, TypeAmmo typeAmmo, TypeWeapon type, int cost, int damage, string name)
+        public Bow(TypeWeapon type, TypeAmmo typeAmmo, int damage, int cost, float range, float accuracy, string name)
             : base(range, accuracy, typeAmmo, type, name, damage, cost)
         {
             _weaponType = AllWeaponTypes.Bow;
@@ -27,12 +27,14 @@ namespace Object_Model_Lib
             if (new Random().NextDouble() < _accuracy)
             {
                 Console.WriteLine("Нанесено урона: {0}", Damage);
-                Reload(150);
             }
             else
             {
                 Console.WriteLine("Упс, ты промахнулся...");
             }
+
+            Reload(150);
+            Console.WriteLine("______________________________");
         }
 
         public override void Reload(int delay)
