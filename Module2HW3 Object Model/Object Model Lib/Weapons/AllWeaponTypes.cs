@@ -12,6 +12,7 @@ namespace Object_Model_Lib
         Sword,
         Bow,
         Crossbow,
-        Rifle
+        Rifle,
+        AutoRifle
     }
 }

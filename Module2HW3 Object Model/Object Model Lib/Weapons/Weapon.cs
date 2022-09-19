@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Object_Model_Lib.Weapons;
 
 namespace Object_Model_Lib
 {

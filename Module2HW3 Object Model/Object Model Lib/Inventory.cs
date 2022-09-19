@@ -6,11 +6,22 @@ namespace Module2HW3_Object_Model
     {
         private readonly AllWeaponTypes _types;
         private Weapon[] _weapons;
-        private static Inventory _instance = new Inventory();
-        private Inventory()
+        private static Inventory _instance;
+        private Inventory(int count)
         {
-            _weapons = new Weapon[10];
+            _weapons = new Weapon[count];
             AddRandomWeaponToInventory();
+        }
+
+        public static int SetInstance
+        {
+            set
+            {
+                if (_instance == null)
+                {
+                    _instance = new Inventory(value);
+                }
+            }
         }
 
         public static Inventory GetInstance
@@ -18,17 +29,6 @@ namespace Module2HW3_Object_Model
             get
             {
                 return _instance;
-            }
-            set
-            {
-                if (_instance == null)
-                {
-                    _instance = new Inventory();
-                }
-                else
-                {
-                    _instance = value;
-                }
             }
         }
 
@@ -50,6 +50,9 @@ namespace Module2HW3_Object_Model
 
         public Weapon AddToInventory()
         {
+            Console.WriteLine();
+            Console.WriteLine("Индекс оружия для спавна");
+            Console.WriteLine("1 - Sword, 2 - Shield, 3 - Bow, 4 - Crossbow, 5 - Rifle, 6 - AutoRifle");
             switch (Console.ReadKey().Key)
             {
                 case ConsoleKey.D1:
@@ -62,14 +65,23 @@ namespace Module2HW3_Object_Model
                     return WeaponSpawner.Spawner(AllWeaponTypes.Crossbow);
                 case ConsoleKey.D5:
                     return WeaponSpawner.Spawner(AllWeaponTypes.Rifle);
+                case ConsoleKey.D6:
+                    return WeaponSpawner.Spawner(AllWeaponTypes.AutoRifle);
                 default:
+                    Console.WriteLine("Ничего не заспавнено...");
                     return null;
             }
         }
 
         public void RemoveWeaponFromInventory(int index)
         {
-            _weapons[index] = null;
+            if (index < _weapons.Length)
+            {
+                if (_weapons[index] != null)
+                {
+                    _weapons[index] = null;
+                }
+            }
         }
     }
 }

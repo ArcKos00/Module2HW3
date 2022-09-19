@@ -9,7 +9,7 @@ namespace Object_Model_Lib
     public static class StandartCharacteristic
     {
         // Стандартные характеристики всего оружия, довольно средние и без особого баланса
-        // Все цены поставил в диапазоне от 100 до 200
+        // Все цены поставил в диапазоне от 100 до 230
         public static Shield ReturnShield()
         {
             return new Shield(TypeWeapon.MeleeDamage, 5, 100, 0.1f, "Щит", 2, 1f);
@@ -32,7 +32,12 @@ namespace Object_Model_Lib
 
         public static Rifle ReturnRifle()
         {
-            return new Rifle(15, 0.9f, TypeAmmo.Bullet, TypeWeapon.RangeDamage, 200, 10, "Винтовка");
+            return new Rifle(15, 1f, TypeAmmo.Bullet, TypeWeapon.RangeDamage, 200, 13, "Винтовка");
+        }
+
+        public static Rifle ReturnAutoRifle()
+        {
+            return new Rifle(13, 0.9f, TypeAmmo.Bullet, TypeWeapon.RangeDamage, 230, 11, "Автоматическая Винтовка");
         }
     }
 }

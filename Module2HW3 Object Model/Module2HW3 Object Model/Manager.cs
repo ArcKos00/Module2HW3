@@ -12,19 +12,59 @@ namespace Module2HW3_Object_Model
     {
         public static void Starter()
         {
-            Drawler drawler = new Drawler();
             while (true)
             {
-                Inventory bag = Inventory.GetInstance;
-                drawler.Draw(bag);
-                
+                Inventory inventory = Inventory.GetInstance;
+                Drawler.Draw(inventory);
+                Console.WriteLine("Если хотите убрать несколько оружий — нажмите \"1\", введите индекс оружия и нажмите enter");
+                Console.WriteLine("Если хотите добавить оружие в пустую ячейку после удаления, нажмите \"2\"");
+                Console.WriteLine("Если хотите, чтобы каждое оружие выстрелило \"3\"");
+                Console.WriteLine("Перейти к поиску \"4\": ");
+                switch (Console.ReadKey().Key)
+                {
+                    case ConsoleKey.D1:
+                        Console.WriteLine();
+                        Console.WriteLine("Укажите ячейку для удаления: ");
+                        inventory.RemoveWeaponFromInventory(int.Parse(Console.ReadLine()));
+                        Drawler.Draw(inventory);
+                        break;
+                    case ConsoleKey.D2:
+                        for (int i = 0; i < inventory.Bag.Length; i++)
+                        {
+                            if (inventory.Bag[i] == null)
+                            {
+                                inventory.Bag[i] = inventory.AddToInventory();
+                                Drawler.Draw(Inventory.GetInstance);
+                                break;
+                            }
+                        }
+
+                        Console.WriteLine("Нету свободных ячеек");
+                        break;
+                    case ConsoleKey.D3:
+                        foreach (var weapon in inventory.Bag)
+                        {
+                            if (weapon != null)
+                            {
+                                weapon.ActionDamage();
+                            }
+                        }
+
+                        Console.ReadKey();
+                        break;
+                    case ConsoleKey.D4:
+                        Console.WriteLine("Введите критерий поиска: ");
+                        Console.WriteLine("\"range\", \"accuracy\", \"cost\", \"name\", \"damage\", \"weaponstype\", \"typeammo\", \"typerangeweapon\": ");
+                        Search();
+                        break;
+                }
             }
         }
 
-        public void Search(string value)
+        private static void Search()
         {
             Inventory inv = Inventory.GetInstance;
-            switch (value)
+            switch (Console.ReadLine())
             {
                 case "range":
                     Console.Write("Bведите критерий поиска \"Радиус поражения\": ");
@@ -36,7 +76,7 @@ namespace Module2HW3_Object_Model
                     float val2 = float.Parse(Console.ReadLine());
                     inv.Bag.AccuracySearch(val2);
                     break;
-                case "typeammo":
+                case "typerangeammo":
                     Console.WriteLine("Bведите критерий поиска \"Тип боеприпаса\": ");
                     Console.Write("1 - Стрела, 2 - Болт, 3 - Пуля");
                     int val3 = int.Parse(Console.ReadLine());
@@ -58,9 +98,9 @@ namespace Module2HW3_Object_Model
                     string val6 = Console.ReadLine();
                     inv.Bag.NameSearch(val6);
                     break;
-                case "allweaponstype":
+                case "weaponstype":
                     Console.Write("Bведите критерий поиска \"Вид оружия\": ");
-                    Console.WriteLine("1 - Sword, 2 - Shield, 3 - Bow, 4 - Crossbow, 5 - Rifle");
+                    Console.WriteLine("1 - Sword, 2 - Shield, 3 - Bow, 4 - Crossbow, 5 - Rifle, 6 - AutoRifle");
                     int val7 = int.Parse(Console.ReadLine());
                     inv.Bag.WeaponTypeSearch((AllWeaponTypes)val7);
                     break;
@@ -70,7 +110,7 @@ namespace Module2HW3_Object_Model
                     inv.Bag.DamageSearch(val8);
                     break;
                 default:
-                    return;
+                    break;
             }
         }
     }

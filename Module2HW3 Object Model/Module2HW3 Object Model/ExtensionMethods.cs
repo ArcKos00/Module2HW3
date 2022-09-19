@@ -17,8 +17,11 @@ namespace Module2HW3_Object_Model
                 if (arr[i].Name == name)
                 {
                     Drawler.Draw(arr[i]);
+                    arr[i].ActionDamage();
                 }
             }
+
+            Console.ReadKey();
         }
 
         public static void WeaponTypeSearch(this Weapon[] arr, AllWeaponTypes type)
@@ -28,8 +31,11 @@ namespace Module2HW3_Object_Model
                 if (arr[i]._weaponType == type)
                 {
                     Drawler.Draw(arr[i]);
+                    arr[i].ActionDamage();
                 }
             }
+
+            Console.ReadKey();
         }
 
         public static void RangeTypeSearch(this Weapon[] arr, TypeWeapon type)
@@ -39,8 +45,11 @@ namespace Module2HW3_Object_Model
                 if (arr[i].WType == type)
                 {
                     Drawler.Draw(arr[i]);
+                    arr[i].ActionDamage();
                 }
             }
+
+            Console.ReadKey();
         }
 
         public static void TypeAmmoSearch(this Weapon[] arr, TypeAmmo type)
@@ -50,8 +59,11 @@ namespace Module2HW3_Object_Model
                 if (arr[i].TypeAmmo == type)
                 {
                     Drawler.Draw(arr[i]);
+                    arr[i].ActionDamage();
                 }
             }
+
+            Console.ReadKey();
         }
 
         public static void CostSearch(this Weapon[] arr, int cost)
@@ -61,8 +73,11 @@ namespace Module2HW3_Object_Model
                 if (arr[i].Cost == cost)
                 {
                     Drawler.Draw(arr[i]);
+                    arr[i].ActionDamage();
                 }
             }
+
+            Console.ReadKey();
         }
 
         public static void AccuracySearch(this Weapon[] arr, float accuracy)
@@ -72,8 +87,11 @@ namespace Module2HW3_Object_Model
                 if (arr[i].Accuracy == accuracy)
                 {
                     Drawler.Draw(arr[i]);
+                    arr[i].ActionDamage();
                 }
             }
+
+            Console.ReadKey();
         }
 
         public static void RangeSearch(this Weapon[] arr, float range)
@@ -83,8 +101,11 @@ namespace Module2HW3_Object_Model
                 if (arr[i].Range == range)
                 {
                     Drawler.Draw(arr[i]);
+                    arr[i].ActionDamage();
                 }
             }
+
+            Console.ReadKey();
         }
 
         public static void DamageSearch(this Weapon[] arr, int damage)
@@ -94,8 +115,11 @@ namespace Module2HW3_Object_Model
                 if (arr[i].Damage == damage)
                 {
                     Drawler.Draw(arr[i]);
+                    arr[i].ActionDamage();
                 }
             }
+
+            Console.ReadKey();
         }
     }
 }

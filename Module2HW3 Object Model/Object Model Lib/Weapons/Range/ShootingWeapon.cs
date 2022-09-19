@@ -15,16 +15,15 @@ namespace Object_Model_Lib
             _typeAmmo = typeAmmo;
         }
 
-        public virtual void Reload(string str, int delay)
+        public virtual void Reload(int delay)
         {
-            Console.WriteLine("Заряжаю {0}", str);
             for (int i = 0; i < 3; i++)
             {
                 Console.Write(".");
                 Thread.Sleep(delay);
             }
 
-            Console.WriteLine("Готово, можно дальше в бой...");
+            Console.WriteLine();
         }
     }
 }

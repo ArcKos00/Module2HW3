@@ -9,16 +9,19 @@ namespace Module2HW3_Object_Model
 {
     public class Drawler
     {
-        public void Draw(Inventory inv)
+        public static void Draw(Inventory inv)
         {
             Console.Clear();
             for (int i = 0; i < inv.Bag.Length; i++)
             {
-                Console.WriteLine("Индекс: " + i);
-                Console.WriteLine("Название: " + inv.Bag[i].Name);
-                Console.WriteLine("Тип оружия: " + inv.Bag[i]._weaponType);
-                Console.WriteLine("Цена: " + inv.Bag[i].Cost);
-                Console.WriteLine();
+                if (inv.Bag[i] != null)
+                {
+                    Console.WriteLine("Индекс: " + i);
+                    Console.WriteLine("Название: " + inv.Bag[i].Name);
+                    Console.WriteLine("Тип оружия: " + inv.Bag[i]._weaponType);
+                    Console.WriteLine("Цена: " + inv.Bag[i].Cost);
+                    Console.WriteLine();
+                }
             }
         }
 
@@ -36,6 +39,7 @@ namespace Module2HW3_Object_Model
 
             Console.WriteLine("Урон: " + weapon.Damage);
             Console.WriteLine("Цена: " + weapon.Cost);
+            Console.WriteLine();
         }
     }
 }

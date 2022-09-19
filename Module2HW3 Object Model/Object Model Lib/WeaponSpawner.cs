@@ -22,6 +22,8 @@ namespace Object_Model_Lib
                     return StandartCharacteristic.ReturnCrossbow();
                 case AllWeaponTypes.Rifle:
                     return StandartCharacteristic.ReturnRifle();
+                case AllWeaponTypes.AutoRifle:
+                    return StandartCharacteristic.ReturnAutoRifle();
                 default:
                     return StandartCharacteristic.ReturnShield();
             }

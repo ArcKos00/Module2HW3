@@ -27,7 +27,7 @@ namespace Object_Model_Lib
             if (new Random().NextDouble() < _accuracy)
             {
                 Console.WriteLine("Нанесено урона: {0}", Damage);
-                Reload(Name, 150);
+                Reload(150);
             }
             else
             {
@@ -35,9 +35,11 @@ namespace Object_Model_Lib
             }
         }
 
-        public override void Reload(string str, int delay)
+        public override void Reload(int delay)
         {
-            base.Reload(str, delay);
+            Console.WriteLine("Заряжаю {0}", Name);
+            base.Reload(delay);
+            Console.WriteLine("Готово, можно дальше в бой...");
         }
     }
 }

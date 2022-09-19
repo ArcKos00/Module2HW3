@@ -27,7 +27,7 @@ namespace Object_Model_Lib
         {
             Console.WriteLine("Удар {0}ом", Name);
             base.ActionDamage();
-            Console.WriteLine("нанесено урона: {0}", Damage);
+            Console.WriteLine("Нанесено урона: {0}", Damage);
             if (new Random().NextDouble() < _chanceBashEnemy)
             {
                 Console.WriteLine("Враг оглушен...");
