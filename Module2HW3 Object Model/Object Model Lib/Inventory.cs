@@ -1,5 +1,4 @@
 ﻿using Object_Model_Lib;
-using Object_Model_Lib.Weapons;
 
 namespace Module2HW3_Object_Model
 {
@@ -10,7 +9,7 @@ namespace Module2HW3_Object_Model
         private static Inventory _instance = new Inventory();
         private Inventory()
         {
-            _weapons = new Weapon[30];
+            _weapons = new Weapon[10];
             AddRandomWeaponToInventory();
         }
 
@@ -45,7 +44,7 @@ namespace Module2HW3_Object_Model
         {
             for (int i = 0; i < _weapons.Length; i++)
             {
-                _weapons[i] = WeaponSpawner.Spawner((AllWeaponTypes)new Random().Next(0, 4));
+                _weapons[i] = WeaponSpawner.Spawner((AllWeaponTypes)new Random().Next(0, 5));
             }
         }
 

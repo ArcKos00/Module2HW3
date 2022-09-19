@@ -7,9 +7,11 @@ using Object_Model_Lib.Weapons;
 
 namespace Object_Model_Lib
 {
-    public abstract class Weapon : Item
+    public abstract class Weapon
     {
         public AllWeaponTypes _weaponType;
+        protected float _accuracy;
+        protected TypeAmmo _typeAmmo;
         private float _range;
         private string _name;
         private TypeWeapon _type;
@@ -29,12 +31,28 @@ namespace Object_Model_Lib
             get { return _range; }
         }
 
+        public float Accuracy
+        {
+            get
+            {
+                return _accuracy;
+            }
+        }
+
+        public TypeAmmo TypeAmmo
+        {
+            get
+            {
+                return _typeAmmo;
+            }
+        }
+
         public string Name
         {
             get { return _name; }
         }
 
-        public TypeWeapon Type
+        public TypeWeapon WType
         {
             get { return _type; }
         }

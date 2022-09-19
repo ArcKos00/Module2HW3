@@ -10,6 +10,7 @@ namespace Module2HW3_Object_Model
     {
         public static void Main(string[] args)
         {
+            Console.WindowHeight = 52;
             Manager.Starter();
         }
     }

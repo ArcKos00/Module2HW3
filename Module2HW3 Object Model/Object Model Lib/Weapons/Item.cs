@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Object_Model_Lib.Weapons
 {
-    public abstract class Item
+    public static class Item
     {
-        public void DeleteItem()
+        public static void DeleteItem(this object item)
         {
+            item = null;
         }
     }
 }
